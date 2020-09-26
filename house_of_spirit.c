@@ -10,7 +10,6 @@ int main()
 
     fprintf(stderr, "覆盖一个指向 fastbin 的指针\n");
     unsigned long long *a, *b;
-    // This has nothing to do with fastbinsY (do not be fooled by the 10) - fake_chunks is just a piece of memory to fulfil allocations (pointed to from fastbinsY)
     unsigned long long fake_chunks[10] __attribute__ ((aligned (16)));
 
     fprintf(stderr, "这块区域 (长度为: %lu) 包含两个 chunk. 第一个在 %p 第二个在 %p.\n", sizeof(fake_chunks), &fake_chunks[1], &fake_chunks[9]);
